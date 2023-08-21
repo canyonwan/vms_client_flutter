@@ -1,0 +1,36 @@
+name: vms_client_flutter
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=3.1.0'
+
+dependencies: 
+  get: 4.6.5
+  easy_refresh: ^3.3.2+1
+  card_swiper: ^3.0.1
+  fluwx: ^4.2.7
+#  flutter_easyloading: ^3.0.5
+  flutter_smart_dialog: ^4.9.4
+  flutter_screenutil: ^5.8.4
+  badges: ^3.1.1
+  dio:
+    git:
+      url: https://github.com/cfug/diox
+      path: dio/
+      ref: dio
+
+  flutter: 
+    sdk: flutter
+
+dev_dependencies: 
+  flutter_lints: 2.0.2
+  flutter_test: 
+    sdk: flutter
+
+flutter:
+  assets:
+    - assets/
+    - assets/tabbar/
+  uses-material-design: true
+

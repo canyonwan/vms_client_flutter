@@ -100,6 +100,7 @@ class Messages extends Translations {
         'en_US': {
           "english": "english",
           "home": "Home",
+          "circle": "Circle",
           "category": "Category",
           "cart": "Cart",
           "account": "Account",

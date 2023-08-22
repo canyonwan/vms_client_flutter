@@ -7,13 +7,16 @@ environment:
 
 dependencies: 
   get: 4.6.5
+  bruno: ^3.4.1
   easy_refresh: ^3.3.2+1
   card_swiper: ^3.0.1
   fluwx: ^4.2.7
-#  flutter_easyloading: ^3.0.5
   flutter_smart_dialog: ^4.9.4
   flutter_screenutil: ^5.8.4
   badges: ^3.1.1
+  waterfall_flow: ^3.0.2
+  left_scroll_actions: ^2.1.2
+#  flutter_qweather: ^0.0.11 和风天气插件
   dio:
     git:
       url: https://github.com/cfug/diox
@@ -31,6 +34,8 @@ dev_dependencies:
 flutter:
   assets:
     - assets/
+    - assets/icons/
+    - assets/icons/mine/
     - assets/tabbar/
   uses-material-design: true
 

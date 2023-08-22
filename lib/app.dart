@@ -39,9 +39,7 @@ class _AppState extends State<App> {
             // return child!;
             return Theme(
               data: ThemeData(
-                primarySwatch: Colors.green,
-                primaryColor: kAppColor,
-                textTheme: TextTheme(bodyText2: TextStyle(fontSize: 30.sp)),
+                primarySwatch: createMaterialColor(kAppColor),
               ),
               child: child!,
             );

@@ -4,6 +4,34 @@
 class R {
   const R._();
 
+  /// ![preview](file:///Users/canyonwan/Documents/me/vms_client_flutter/assets/icons/address_icon.png)
+  static const String ASSETS_ICONS_ADDRESS_ICON_PNG =
+      'assets/icons/address_icon.png';
+
+  /// ![preview](file:///Users/canyonwan/Documents/me/vms_client_flutter/assets/icons/mine/daifahuo.png)
+  static const String ASSETS_ICONS_MINE_DAIFAHUO_PNG =
+      'assets/icons/mine/daifahuo.png';
+
+  /// ![preview](file:///Users/canyonwan/Documents/me/vms_client_flutter/assets/icons/mine/daifukuan.png)
+  static const String ASSETS_ICONS_MINE_DAIFUKUAN_PNG =
+      'assets/icons/mine/daifukuan.png';
+
+  /// ![preview](file:///Users/canyonwan/Documents/me/vms_client_flutter/assets/icons/mine/daipingjia.png)
+  static const String ASSETS_ICONS_MINE_DAIPINGJIA_PNG =
+      'assets/icons/mine/daipingjia.png';
+
+  /// ![preview](file:///Users/canyonwan/Documents/me/vms_client_flutter/assets/icons/mine/daishouhuo.png)
+  static const String ASSETS_ICONS_MINE_DAISHOUHUO_PNG =
+      'assets/icons/mine/daishouhuo.png';
+
+  /// ![preview](file:///Users/canyonwan/Documents/me/vms_client_flutter/assets/icons/mine/tuikuan.png)
+  static const String ASSETS_ICONS_MINE_TUIKUAN_PNG =
+      'assets/icons/mine/tuikuan.png';
+
+  /// ![preview](file:///Users/canyonwan/Documents/me/vms_client_flutter/assets/icons/mine/wodedingdan.png)
+  static const String ASSETS_ICONS_MINE_WODEDINGDAN_PNG =
+      'assets/icons/mine/wodedingdan.png';
+
   /// ![preview](file:///Users/canyonwan/Documents/me/vms_client_flutter/assets/tabbar/cart.png)
   static const String ASSETS_TABBAR_CART_PNG = 'assets/tabbar/cart.png';
 

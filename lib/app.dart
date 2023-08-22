@@ -40,6 +40,8 @@ class _AppState extends State<App> {
             return Theme(
               data: ThemeData(
                 primarySwatch: createMaterialColor(kAppColor),
+                scaffoldBackgroundColor: kBgF7Color,
+                brightness: Brightness.light,
               ),
               child: child!,
             );

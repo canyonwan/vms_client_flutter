@@ -27,6 +27,13 @@ dependencies:
   badges: ^3.1.1
   waterfall_flow: ^3.0.2
   left_scroll_actions: ^2.1.2
+  shared_preferences: ^2.2.0
+  permission_handler: ^10.4.3
+  logger: ^2.0.1
+  intl: ^0.18.1
+  pinput: ^3.0.0
+  extended_image: ^8.1.0
+  image_picker: ^1.0.2
 #  flutter_qweather: ^0.0.11 和风天气插件
   dio:
     git:
@@ -35,6 +42,8 @@ dependencies:
       ref: dio
 
   flutter: 
+    sdk: flutter
+  flutter_localizations:
     sdk: flutter
 
 dev_dependencies: 

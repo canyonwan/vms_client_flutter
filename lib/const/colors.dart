@@ -6,6 +6,7 @@ const Color kBgGreyColor = Color(0xFFF2F2F2);
 const Color kBgF7Color = Color(0xFFF7F7F9);
 const Color kAppBlackColor = Color(0xFF333333);
 const Color kAppSubGrey99Color = Color(0xFF999999);
+const Color kPriceColor = Color(0xFFEC6243);
 const Color kAppGrey66Color = Color(0xFF666666);
 const Color kWhiteColor = Color(0xFFffffff);
 
@@ -17,7 +18,7 @@ MaterialColor createMaterialColor(Color color) {
   for (int i = 1; i < 10; i++) {
     strengths.add(0.1 * i);
   }
-  strengths.forEach((strength) {
+  for (var strength in strengths) {
     final double ds = 0.5 - strength;
     swatch[(strength * 1000).round()] = Color.fromRGBO(
       r + ((ds < 0 ? r : (255 - r)) * ds).round(),
@@ -25,6 +26,6 @@ MaterialColor createMaterialColor(Color color) {
       b + ((ds < 0 ? b : (255 - b)) * ds).round(),
       1,
     );
-  });
+  }
   return MaterialColor(color.value, swatch);
 }

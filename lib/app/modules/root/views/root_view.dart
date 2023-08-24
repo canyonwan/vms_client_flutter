@@ -9,25 +9,20 @@ class RootView extends GetView<RootController> {
   const RootView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GetBuilder<RootController>(
-        builder: (c) {
-          return PageView(
-            physics: const NeverScrollableScrollPhysics(),
-            controller: c.pageController,
-            onPageChanged: (index) => c.setCurrentIndex(index),
-            children: c.pages,
-          );
-        },
-      ),
-      bottomNavigationBar: GetBuilder<RootController>(builder: (c) {
-        return BottomNavigationBar(
+    return GetBuilder<RootController>(builder: (c) {
+      return Scaffold(
+        body: PageView(
+          physics: const NeverScrollableScrollPhysics(),
+          controller: c.pageController,
+          onPageChanged: (index) => c.setCurrentIndex(index),
+          children: c.pages,
+        ),
+        bottomNavigationBar: BottomNavigationBar(
           currentIndex: c.currentIndex,
           onTap: (index) {
             c.jumpPage(index);
           },
           type: BottomNavigationBarType.fixed,
-          // selectedItemColor: kAppColor,
           unselectedItemColor: const Color.fromRGBO(123, 123, 123, 1),
           items: [
             BottomNavigationBarItem(
@@ -96,8 +91,8 @@ class RootView extends GetView<RootController> {
               ),
             ),
           ],
-        );
-      }),
-    );
+        ),
+      );
+    });
   }
 }

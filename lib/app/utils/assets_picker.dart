@@ -9,7 +9,7 @@ abstract class AssetsPicker {
     double maxWidth = 512,
     double maxHeight = 512,
   }) async {
-    if (!(await Access.photos())) {
+    if (!(await PermissionUtil.photos())) {
       if (context.mounted) {
         // SmartDialog.show(builder:  (_) => const LoadingDialog());
         CustomDialog.showAccess(

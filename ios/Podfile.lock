@@ -6,11 +6,28 @@ PODS:
   - fluwx/pay (0.0.1):
     - Flutter
     - WechatOpenSDK-XCFramework (~> 2.0.2)
+  - image_picker_ios (0.0.1):
+    - Flutter
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - permission_handler_apple (9.1.1):
+    - Flutter
+  - shared_preferences_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - smart_auth (0.0.1):
+    - Flutter
   - WechatOpenSDK-XCFramework (2.0.2)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - fluwx (from `.symlinks/plugins/fluwx/ios`)
+  - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
+  - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
+  - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
+  - smart_auth (from `.symlinks/plugins/smart_auth/ios`)
 
 SPEC REPOS:
   trunk:
@@ -21,10 +38,25 @@ EXTERNAL SOURCES:
     :path: Flutter
   fluwx:
     :path: ".symlinks/plugins/fluwx/ios"
+  image_picker_ios:
+    :path: ".symlinks/plugins/image_picker_ios/ios"
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/darwin"
+  permission_handler_apple:
+    :path: ".symlinks/plugins/permission_handler_apple/ios"
+  shared_preferences_foundation:
+    :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
+  smart_auth:
+    :path: ".symlinks/plugins/smart_auth/ios"
 
 SPEC CHECKSUMS:
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   fluwx: 3c7b6df42f83d444d4538f3eaeae079f12d30c37
+  image_picker_ios: 4a8aadfbb6dc30ad5141a2ce3832af9214a705b5
+  path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
+  permission_handler_apple: e76247795d700c14ea09e3a2d8855d41ee80a2e6
+  shared_preferences_foundation: 5b919d13b803cadd15ed2dc053125c68730e5126
+  smart_auth: 4bedbc118723912d0e45a07e8ab34039c19e04f2
   WechatOpenSDK-XCFramework: acdeeda129efbef9532bca8a10c24e1b4b8c7d69
 
 PODFILE CHECKSUM: 1ea9f49c4f5a0cb4ea986a31044ceb0f7668e46a

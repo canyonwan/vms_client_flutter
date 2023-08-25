@@ -184,7 +184,7 @@ class _CustomTabBarState extends State<CustomTabBar>
     Widget tabsChild = SafeArea(
       top: false,
       bottom: false,
-      minimum: const EdgeInsets.symmetric(horizontal: AppTheme.margin),
+      minimum: const EdgeInsets.symmetric(horizontal: AppTheme.kPageMargin),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: List.generate(widget.tabs.length, (index) {
@@ -268,7 +268,7 @@ class _CustomTabBarState extends State<CustomTabBar>
           .currentContext
           ?.findRenderObject() as RenderBox;
       position = renderBox.localToGlobal(tabsContainerOffset).dx;
-      if (position > offset) offset = position - AppTheme.margin;
+      if (position > offset) offset = position - AppTheme.kPageMargin;
     } else {
       renderBox = (_textLTR ? _tabKeys.last : _tabKeys.first)
           .currentContext
@@ -280,7 +280,7 @@ class _CustomTabBarState extends State<CustomTabBar>
 
       if (position + size - offset < screenWidth) {
         offset = position + size - screenWidth;
-        if (offset > 0) offset += AppTheme.margin;
+        if (offset > 0) offset += AppTheme.kPageMargin;
       }
     }
     offset *= (_textLTR ? 1 : -1);

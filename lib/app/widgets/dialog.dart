@@ -52,7 +52,7 @@ class CustomDialog extends StatelessWidget {
       cancel: const Text('Cancel'),
       confirm: const Text('Setting'),
       onCancel: () => Navigator.of(context).pop(),
-      onConfirm: () => Access.setting(),
+      onConfirm: () => PermissionUtil.setting(),
     );
   }
 
@@ -88,7 +88,7 @@ class CustomDialog extends StatelessWidget {
         children: [
           if (title != null)
             Padding(
-              padding: const EdgeInsets.all(AppTheme.margin),
+              padding: const EdgeInsets.all(AppTheme.kPageMargin),
               child: DefaultTextStyle.merge(
                 textAlign: TextAlign.center,
                 style: DialogTheme.of(context).titleTextStyle,
@@ -100,7 +100,7 @@ class CustomDialog extends StatelessWidget {
             fit: FlexFit.loose,
             child: SingleChildScrollView(
               physics: const ClampingScrollPhysics(),
-              padding: const EdgeInsets.all(AppTheme.margin).copyWith(
+              padding: const EdgeInsets.all(AppTheme.kPageMargin).copyWith(
                 top: title != null ? 0 : null,
                 bottom: buttonGroup.isNotEmpty ? 0 : null,
               ),
@@ -119,7 +119,7 @@ class CustomDialog extends StatelessWidget {
           ),
           if (buttonGroup.isNotEmpty)
             Padding(
-              padding: const EdgeInsets.all(AppTheme.margin),
+              padding: const EdgeInsets.all(AppTheme.kPageMargin),
               child: Row(children: buttonGroup),
             ),
         ],

@@ -16,7 +16,7 @@ class CustomBottomAppBar extends StatelessWidget {
 
   EdgeInsets get _padding {
     return EdgeInsets.symmetric(
-      horizontal: AppTheme.margin,
+      horizontal: AppTheme.kPageMargin,
       vertical: 10.w,
     ).copyWith(bottom: Screen.bottomBar > 0 ? 0 : null);
   }

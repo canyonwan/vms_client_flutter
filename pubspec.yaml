@@ -18,13 +18,13 @@ fluwx:
 
 dependencies: 
   get: 4.6.5
+  url_launcher: ^6.1.12
   bruno: ^3.4.1
   easy_refresh: ^3.3.2+1
   card_swiper: ^3.0.1
   fluwx: ^4.2.7
   flutter_smart_dialog: ^4.9.4
   flutter_screenutil: ^5.8.4
-  badges: ^3.1.1
   waterfall_flow: ^3.0.2
   left_scroll_actions: ^2.1.2
   shared_preferences: ^2.2.0
@@ -34,6 +34,7 @@ dependencies:
   pinput: ^3.0.0
   extended_image: ^8.1.0
   image_picker: ^1.0.2
+  flutter_widget_from_html: ^0.10.3
 #  flutter_qweather: ^0.0.11 和风天气插件
   dio:
     git:

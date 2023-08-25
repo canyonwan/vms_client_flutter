@@ -10,7 +10,8 @@ class CustomEmpty extends StatelessWidget {
     Key? key,
     this.icon,
     this.title,
-    this.label, this.color,
+    this.label,
+    this.color,
   }) : super(key: key);
 
   @override
@@ -58,7 +59,7 @@ class CustomEmpty extends StatelessWidget {
             child: DefaultTextStyle.merge(
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 32.w,
+                fontSize: 14.w,
                 fontWeight: FontWeight.w600,
                 color: Theme.of(context).colorScheme.primary,
               ),

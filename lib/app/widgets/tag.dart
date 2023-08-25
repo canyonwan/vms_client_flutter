@@ -16,8 +16,9 @@ class CustomTag extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(
         horizontal: 10.w,
-        vertical: 7.w,
+        vertical: 5.w,
       ),
+      margin: EdgeInsets.only(right: 10.w),
       decoration: ShapeDecoration(
         color: surfaceColor.withOpacity(0.1),
         shape: const StadiumBorder(),
@@ -25,7 +26,7 @@ class CustomTag extends StatelessWidget {
       child: DefaultTextStyle.merge(
         textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 14.w,
+          fontSize: 10.w,
           fontWeight: FontWeight.w600,
           color: surfaceColor,
           height: 1.2,

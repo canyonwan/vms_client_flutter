@@ -27,7 +27,7 @@ class CustomAppBar extends AppBar {
     for (var element in items!) {
       ws.add(Container(
         alignment: Alignment.center,
-        padding: const EdgeInsets.only(right: AppTheme.margin),
+        padding: const EdgeInsets.only(right: AppTheme.kPageMargin),
         child: element,
       ));
     }

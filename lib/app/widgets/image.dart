@@ -77,7 +77,8 @@ class CustomImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final borderRadius = BorderRadius.all(Radius.circular(radius ?? 8.w));
+    final borderRadius =
+        BorderRadius.all(Radius.circular(radius ?? AppTheme.kBorderRadius));
     switch (type) {
       case CustomImageType.asset:
         return ExtendedImage.asset(

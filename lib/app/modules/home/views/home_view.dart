@@ -4,8 +4,10 @@ import 'package:easy_refresh/easy_refresh.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:vms_client_flutter/app/widgets/index.dart';
 import 'package:vms_client_flutter/const/colors.dart';
 import 'package:vms_client_flutter/const/common.dart';
+import 'package:vms_client_flutter/theme.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -18,7 +20,7 @@ class HomeView extends GetView<HomeController> {
           elevation: 0, title: const Text('HomeView'), centerTitle: true),
       body: GetBuilder<HomeController>(
           init: HomeController(),
-          builder: (context) {
+          builder: (c) {
             return EasyRefresh.builder(
                 onRefresh: controller.onRefresh,
                 controller: controller.refreshController,
@@ -27,26 +29,42 @@ class HomeView extends GetView<HomeController> {
                     physics: physic,
                     slivers: [
                       SliverPadding(
-                        padding: EdgeInsets.all(kPagePadding),
+                        padding: EdgeInsets.all(AppTheme.kPagePadding),
                         sliver: SliverToBoxAdapter(
                           child: Container(
                             clipBehavior: Clip.hardEdge,
                             decoration: BoxDecoration(
                               borderRadius:
-                                  BorderRadius.circular(kBorderRadius),
+                                  BorderRadius.circular(AppTheme.kBorderRadius),
                               color: Colors.white,
                             ),
                             height: 180.h,
                             child: Swiper(
                               itemBuilder: (BuildContext context, int index) {
-                                return Image.network(
-                                  'https://resource.tuniaokj.com/images/xiongjie/xiong-3d-new1.png',
-                                  fit: BoxFit.fill,
-                                );
+                                return c.bannerList.isNotEmpty
+                                    ? CustomImage(
+                                        url:
+                                            '$kImgUrl${c.bannerList[index].url}',
+                                        type: CustomImageType.network,
+                                      )
+                                    : Image.network(
+                                        'https://resource.tuniaokj.com/images/xiongjie/xiong-3d-new1.png',
+                                        fit: BoxFit.fill,
+                                      );
                               },
-                              itemCount: 3,
+                              itemCount: c.bannerList.isNotEmpty
+                                  ? c.bannerList.length
+                                  : 1,
                               autoplay: true,
-                              pagination: SwiperPagination(),
+                              pagination: SwiperPagination(
+                                alignment: Alignment.bottomCenter,
+                                builder: DotSwiperPaginationBuilder(
+                                  color: AppTheme.kAppSubGrey99Color,
+                                  activeColor: AppTheme.primary,
+                                  size: 6.w,
+                                  activeSize: 6.w,
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -64,8 +82,8 @@ class HomeView extends GetView<HomeController> {
                           },
                         ),
                       ),
-                      _buildNewGoods(),
-                      _buildRecommended()
+                      _buildNewGoods(c),
+                      _buildRecommended(c)
                     ],
                   );
                 });
@@ -74,7 +92,7 @@ class HomeView extends GetView<HomeController> {
   }
 
   // 新品推荐
-  SliverPadding _buildNewGoods() {
+  SliverPadding _buildNewGoods(HomeController c) {
     return SliverPadding(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
       sliver: SliverToBoxAdapter(
@@ -83,27 +101,24 @@ class HomeView extends GetView<HomeController> {
           height: GetPlatform.isIOS ? 150.h : 200.h,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: 10,
+            itemCount: c.newGoodsList.length,
             padding: EdgeInsets.only(right: 12.w),
-            itemBuilder: (context, index) {
+            itemBuilder: (context, i) {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(6.w),
-                    child: Image.network(
-                      'https://resource.tuniaokj.com/images/xiongjie/xiong-3d-new1.png',
-                      fit: BoxFit.fill,
-                      height: 120.w,
-                      width: 120.w,
-                    ),
+                  CustomImage(
+                    height: 120.w,
+                    width: 120.w,
+                    url: '$kImgUrl${c.newGoodsList[i].files![0].fileUrl!}',
+                    type: CustomImageType.network,
                   ),
                   SizedBox(
                     width: 130.w,
                     child: Padding(
                       padding: EdgeInsets.only(top: 5.w),
                       child: Text(
-                        '阿维菌透皮素专治痘痘阿维菌透皮素专治痘痘3',
+                        c.newGoodsList[i].name!,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(fontSize: 14.sp),
@@ -111,7 +126,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ),
                   Text(
-                    '￥100.00',
+                    '￥${c.newGoodsList[i].price ?? '暂无报价'}',
                     style: TextStyle(fontSize: 14.sp, color: Colors.redAccent),
                   ),
                 ],
@@ -124,7 +139,7 @@ class HomeView extends GetView<HomeController> {
   }
 
   // 热门推荐
-  SliverPadding _buildRecommended() {
+  SliverPadding _buildRecommended(HomeController c) {
     return SliverPadding(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
       sliver: SliverToBoxAdapter(
@@ -158,29 +173,26 @@ class HomeView extends GetView<HomeController> {
             GridView.builder(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              itemCount: 10,
+              itemCount: c.hotGoodsList.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 0.65,
                 crossAxisSpacing: 10.w,
                 mainAxisSpacing: 10.w,
               ),
-              itemBuilder: (context, index) {
+              itemBuilder: (context, i) {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(6.w),
-                      child: Image.network(
-                        'https://resource.tuniaokj.com/images/xiongjie/xiong-3d-new1.png',
-                        fit: BoxFit.fitWidth,
-                      ),
+                    CustomImage(
+                      url: '$kImgUrl${c.hotGoodsList[i].files![0].fileUrl!}',
+                      type: CustomImageType.network,
                     ),
                     SizedBox(
                       child: Padding(
                         padding: EdgeInsets.symmetric(vertical: 5.h),
                         child: Text(
-                          '阿维菌透皮素专治痘痘阿维菌透皮素专治痘痘3',
+                          '${c.hotGoodsList[i].name}',
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
@@ -191,13 +203,13 @@ class HomeView extends GetView<HomeController> {
                     Row(
                       children: [
                         Container(
+                          padding: EdgeInsets.symmetric(
+                            vertical: 1.h,
+                            horizontal: 2.w,
+                          ),
                           decoration: BoxDecoration(
-                            border: Border.all(
-                              color: kPriceColor.withOpacity(.7),
-                              width: 0.5,
-                            ),
                             borderRadius: BorderRadius.circular(2.w),
-                            color: Colors.white,
+                            color: AppTheme.kPriceColor.withOpacity(.2),
                           ),
                           child: Text(
                             '包邮',
@@ -207,6 +219,7 @@ class HomeView extends GetView<HomeController> {
                         ),
                       ],
                     ),
+                    SizedBox(height: 5.w),
                     Row(
                       children: [
                         Text.rich(
@@ -216,7 +229,7 @@ class HomeView extends GetView<HomeController> {
                                 fontSize: 10.sp, color: Colors.redAccent),
                             children: [
                               TextSpan(
-                                text: '100.00',
+                                text: '${c.hotGoodsList[i].price}',
                                 style: TextStyle(
                                   fontSize: 16.sp,
                                   color: kPriceColor,
@@ -231,7 +244,7 @@ class HomeView extends GetView<HomeController> {
                         Padding(
                           padding: EdgeInsets.only(left: 5.w),
                           child: Text(
-                            '333+人已付款',
+                            '已售出${c.hotGoodsList[i].sales}${c.hotGoodsList[i].unitsName}',
                             style: TextStyle(
                               fontSize: 10.sp,
                               color: kAppSubGrey99Color,

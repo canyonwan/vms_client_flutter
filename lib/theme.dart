@@ -4,13 +4,26 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vms_client_flutter/app/utils/index.dart';
 
 abstract class AppTheme {
-  static const margin = 16.0;
+  static double kBorderRadius = 8.w;
+  static double kBorderRadiusRound = 22.w;
+  static double kPagePadding = 14.w;
+  static double kPageMargin = 14.w;
 
-  static const primary = Color(0xFF00CC71);
-  static const success = Color(0xFF23A757);
-  static const warning = Color(0xFFFF1843);
-  static const error = Color(0xFFDA1414);
-  static const info = Color(0xFF2E5AAC);
+  static const Color primary = Color(0xFF00CC71);
+  static const Color success = Color(0xFF23A757);
+  static const Color warning = Color(0xFFFF1843);
+  static const Color error = Color(0xFFDA1414);
+  static const Color info = Color(0xFF2E5AAC);
+  static const Color kAppColor = Color(0xFF00CC71);
+  static const Color kAppLightColor = Color(0xFFF3F8EB);
+  static const Color kBgGreyColor = Color(0xFFF2F2F2);
+  static const Color kBgF7Color = Color(0xFFF7F7F9);
+  static const Color kAppBlackColor = Color(0xFF333333);
+  static const Color kAppSubGrey99Color = Color(0xFF999999);
+  static const Color kPriceColor = Color(0xFFEC6243);
+  static const Color kAppGrey66Color = Color(0xFF666666);
+  static const Color kWhiteColor = Color(0xFFffffff);
+  static const Color kBgColor = Color(0xFFF6F6F6);
 
   static ThemeMode mode = ThemeMode.system;
 
@@ -58,11 +71,12 @@ abstract class AppTheme {
     var scheme = ColorScheme.light(
       background: Colors.white,
       onBackground: const Color(0xFF333333),
-      surface: Colors.white,
+      surface: const Color(0xFFF8F8F8),
       onSurface: const Color(0xFF333333),
       primary: primary,
       onPrimary: Colors.white,
-      secondary: const Color(0xFFFFB800),
+      // secondary: const Color(0xFFE99645),
+      secondary: const Color(0xFFEC8413),
       onSecondary: Colors.white,
       tertiary: const Color(0xFFF4F6F9),
       outline: const Color(0xFFF4F6F9),
@@ -75,14 +89,19 @@ abstract class AppTheme {
 
   static ThemeData dark() {
     var scheme = ColorScheme.dark(
-      background: const Color(0xFF0D0D0D),
+      // background: const Color(0xFF141313),
+      background: const Color(0xFF222222),
       onBackground: Colors.white,
-      surface: const Color(0xFF252525),
+      // surface: const Color(0xFF252525),
+      // surface: const Color(0xFFF8F8F8),
+      // surface: const Color(0xFF333333),
+      // surface: const Color(0xFF1C1B1B),
+      surface: const Color(0xFF333333),
       onSurface: Colors.white,
       primary: primary,
       onPrimary: Colors.white,
-      secondary: const Color(0xFFFFB800),
       onSecondary: Colors.white,
+      secondary: const Color(0xFFEC8413),
       tertiary: const Color(0xFF141414),
       outline: const Color(0xFF252525),
       shadow: const Color(0xFF777777).withOpacity(0.08),
@@ -102,7 +121,7 @@ abstract class AppTheme {
       dialogTheme: DialogTheme(
         elevation: 0,
         titleTextStyle: TextStyle(
-          fontSize: 22.w,
+          fontSize: 18.w,
           fontWeight: FontWeight.w600,
         ),
         contentTextStyle: TextStyle(fontSize: 20.w),
@@ -137,13 +156,13 @@ abstract class AppTheme {
         ),
         titleTextStyle: TextStyle(
           color: scheme.onBackground,
-          fontSize: 18.sp,
+          fontSize: 14.sp,
           fontWeight: FontWeight.w600,
           height: 1.2,
         ),
         toolbarTextStyle: TextStyle(
           color: scheme.onBackground,
-          fontSize: 18.sp,
+          fontSize: 14.sp,
           fontWeight: FontWeight.w600,
           height: 1.2,
         ),

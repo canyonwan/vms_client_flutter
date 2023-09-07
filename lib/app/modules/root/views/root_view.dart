@@ -66,15 +66,21 @@ class RootView extends GetView<RootController> {
             ),
             BottomNavigationBarItem(
               label: 'cart'.tr,
-              icon: Image.asset(
-                R.ASSETS_TABBAR_CART_PNG,
-                width: 25.w,
-                height: 25.0.w,
+              icon: Badge(
+                label: Text('99'),
+                child: Image.asset(
+                  R.ASSETS_TABBAR_CART_PNG,
+                  width: 25.w,
+                  height: 25.0.w,
+                ),
               ),
-              activeIcon: Image.asset(
-                R.ASSETS_TABBAR_CART_ED_PNG,
-                width: 25.0.w,
-                height: 25.0.w,
+              activeIcon: Badge(
+                label: Text('99'),
+                child: Image.asset(
+                  R.ASSETS_TABBAR_CART_ED_PNG,
+                  width: 25.0.w,
+                  height: 25.0.w,
+                ),
               ),
             ),
             BottomNavigationBarItem(

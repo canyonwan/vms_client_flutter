@@ -19,7 +19,7 @@ fluwx:
 dependencies: 
   get: 4.6.5
   url_launcher: ^6.1.12
-  bruno: ^3.4.1
+  bruno: ^3.4.2
   easy_refresh: ^3.3.2+1
   card_swiper: ^3.0.1
   fluwx: ^4.2.7

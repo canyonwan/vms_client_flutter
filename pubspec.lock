@@ -45,10 +45,10 @@ packages:
     dependency: "direct main"
     description:
       name: bruno
-      sha256: "8bd461a658996000eab1111a93fb4826ade878103f5a9afa29a414046805448b"
+      sha256: "7c8708e9e26c8e9c7b42180b0717ae3eedefb5a07ae07b36bc5936fbccc4ebf1"
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "3.4.1"
+    version: "3.4.2"
   cached_network_image:
     dependency: transitive
     description:

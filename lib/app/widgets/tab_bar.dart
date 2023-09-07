@@ -184,7 +184,7 @@ class _CustomTabBarState extends State<CustomTabBar>
     Widget tabsChild = SafeArea(
       top: false,
       bottom: false,
-      minimum: const EdgeInsets.symmetric(horizontal: AppTheme.kPageMargin),
+      minimum: EdgeInsets.symmetric(horizontal: AppTheme.kPageMargin),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: List.generate(widget.tabs.length, (index) {
